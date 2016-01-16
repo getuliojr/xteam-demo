@@ -7,7 +7,7 @@
     "node": "5.4.1"
   },
   "scripts": {
-    "start": "grunt",
+    "start": "node index.js",
     "postinstall": "bower install",
     "test": "grunt karma:unit"
   },
