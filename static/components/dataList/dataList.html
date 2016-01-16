@@ -1,0 +1,76 @@
+﻿<!-- This component uses the following lib: https://github.com/daniel-nagy/md-data-table -->
+
+    <!-- Title and Menu Options-->
+    <md-data-table-toolbar ng-if="!dataList.filter.show && (!dataList.selected || dataList.selected.length == 0) && (!!dataList.config.title || !!dataList.config.enableFilter)">
+        <h2 class="md-title">{{dataList.config.title}}</h2>
+        <div flex></div>
+        <!-- Show Search field if it has showSearch on a callback function onSearch-->
+        <md-button class="md-icon-button" ng-click="dataList.filter.show = true" aria-label="Show Search Filter" ng-if="!!dataList.config.enableFilter">
+            <md-icon>filter_list</md-icon>
+        </md-button>
+    </md-data-table-toolbar>
+
+    <!-- Show search filter -->
+    <md-data-table-toolbar ng-if="dataList.filter.show && !dataList.selected.length">
+        <ng-form flex name="dataList.filter.form">
+            <md-input-container class="md-block">
+                <md-icon>search</md-icon>
+                <label>Search</label>
+                <input ng-model="dataList.filter.value" ng-model-options="dataList.filter.options" 
+                       ng-change="dataList.filterChanged(dataList.filter.value)">
+            </md-input-container>
+        </ng-form>
+        <md-button class="md-icon-button md-button" ng-click="dataList.removeFilter()" aria-label="Cancel Search Filter">
+            <md-icon>close</md-icon>
+        </md-button>
+    </md-data-table-toolbar>
+
+    <!-- Show selected Itens-->
+    <md-data-table-toolbar class="alternate" ng-if="dataList.selected.length > 0" layout-align="space-between center">
+        <div flex>
+            {{dataList.selected.length}}&nbsp;
+            <span ng-if="dataList.selected.length==1">{{ 'DATALIST.SELECTONE' | translate }}</span>
+            <span ng-if="dataList.selected.length > 1">{{ 'DATALIST.SELECTMANY' | translate }}</span>
+        </div>
+        <div >
+            <md-button class="md-icon-buttom" ng-repeat="button in dataList.config.multipleItemMenu" ng-click="button.onClick(dataList.selected)"
+                       aria-label="button.ariaLabel"
+                       ng-attr-data-msg-confirm="button.msgConfirm">
+                <md-icon ng-if="button.icon">{{button.icon}}</md-icon><span ng-if="button.name"> {{ button.name | translate}}</span>
+            </md-button>
+        </div>
+    </md-data-table-toolbar>
+
+    <!-- Content -->
+    <md-data-table-container>
+        <table md-data-table md-progress="deferred" md-row-select="dataList.selected" ng-class="{'data-table-hide-checkbox': !dataList.config.enableRowSelection}">
+            <thead md-order="dataList.orderField" md-trigger="dataList.orderByChanged">
+                <tr>
+                    <th ng-repeat="column in dataList.config.columns" name="{{column.displayName}}" order-by="{{column.field}}" unit="{{column.unit}}" ng-attr-numeric="{{column.isNumeric || undefined}}"></th>
+                    <!-- Actions Menu -->
+                    <th ng-if="!!dataList.config.itemMenu" class="menuOptions"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr md-auto-select ng-repeat="item in dataList.filteredData" md-disable-select="!dataList.config.enableRowSelection">
+                    <td ng-repeat="column in dataList.config.columns" >{{item[column.field]}}</td>
+                    <td ng-if="!!dataList.config.itemMenu" class="menuOptions">
+                        <md-menu>
+                            <md-button aria-label="Item Options" ng-click="$mdOpenMenu($event)" md-menu-origin md-menu-align-target>
+                                <md-icon>more_vert</md-icon>
+                            </md-button>
+                            <md-menu-content>
+                                <md-menu-item ng-repeat="button in dataList.config.itemMenu">
+                                        <md-button ng-click="button.onClick(item)" aria-label="button.ariaLabel"
+                                                   ng-attr-data-msg-confirm="button.msgConfirm">
+                                                <md-icon ng-if="button.icon">{{button.icon}}</md-icon> {{ button.name | translate}}
+                                        </md-button>
+                                    
+                                </md-menu-item>
+                            </md-menu-content>
+                        </md-menu>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </md-data-table-container>

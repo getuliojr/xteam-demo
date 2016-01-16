@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- General META -->
+    <meta charset="UTF-8">
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <!-- Responsive META -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+    <!-- WEB FONTS -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto:100,300,100italic,400,300italic' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- bower:css -->
+    <link rel="stylesheet" href="libs/angular-material/angular-material.css" />
+    <link rel="stylesheet" href="libs/angular-material-data-table/dist/md-data-table.min.css" />
+    <!-- endbower -->
+
+    <!-- fileblock:css clientCSS -->
+    <!-- endfileblock -->
+    <base href="/">
+</head>
+<body ng-app="App" ng-activity-indicator ng-cloak>
+<!--[if lt IE 7]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+<div flex layout="column" tabIndex="-1" role="main" class="md-whiteframe-z2 bgGrey" layout-fill>
+    <md-toolbar layout="row" class="md-whiteframe-z1">
+        <div class="md-toolbar-tools">
+            <h2>
+                <span>Discount Ascii Warehouse</span>
+            </h2>
+            <span flex></span>
+        </div>
+    </md-toolbar>
+    <md-content class="bgGrey" layout="row" layout-align="center center" >
+        <div flex-initial style="width:1100px;">
+            <p>Here you're sure to find a bargain on some of the finest ascii available to purchase. Be sure to peruse our selection of ascii faces in an exciting range of sizes and prices.</p>
+            <p>But first, a word from our sponsors:</p> <script>document.write('<img class="ad" src="/ad/?r=' + Math.floor(Math.random()*1000) + '"/>');</script>
+            <section class="products" ui-view>
+                ... products go here ...
+            </section>
+        </div>
+    </md-content>
+</div>
+
+<!-- bower:js -->
+<script src="libs/jquery/dist/jquery.js"></script>
+<script src="libs/es5-shim/es5-shim.js"></script>
+<script src="libs/angular/angular.js"></script>
+<script src="libs/angular-animate/angular-animate.js"></script>
+<script src="libs/angular-resource/angular-resource.js"></script>
+<script src="libs/angular-sanitize/angular-sanitize.js"></script>
+<script src="libs/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="libs/angular-aria/angular-aria.js"></script>
+<script src="libs/angular-messages/angular-messages.js"></script>
+<script src="libs/angular-material/angular-material.js"></script>
+<script src="libs/angular-material-data-table/dist/md-data-table.min.js"></script>
+<!-- endbower -->
+<!-- fileblock:js clientJS -->
+<script src="app.js"></script>
+<script src="components/dataList/dataList.js"></script>
+<script src="components/index.js"></script>
+<script src="shared/index.js"></script>
+<script src="shared/services/factory/appResourceFactory.js"></script>
+<script src="shared/services/factory/handleExceptionFactory.js"></script>
+<script src="shared/services/factory/index.js"></script>
+<script src="shared/services/index.js"></script>
+<script src="shared/services/service/index.js"></script>
+<script src="shared/services/service/notificationService.js"></script>
+<script src="shared/services/service/setorService.js"></script>
+<!-- endfileblock -->
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+{
+  "name": "x-Team Test App",
+  "version": "0.0.1",
+  "description": "Test for X-team",
+  "authors": [
+    "Getulio Romão Campos Junior"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "angular": "~1.4.8",
+    "angular-animate": "~1.4.8",
+    "angular-resource": "~1.4.8",
+    "angular-sanitize": "~1.4.8",
+    "angular-ui-router": "~0.2.15",
+    "es5-shim": "~4.3.1",
+    "jquery": "~2.1.4",
+    "angular-material-data-table": "~0.8.14",
+    "angular-material": "~1.0.1"
+  },
+  "devDependencies": {
+    "angular-mocks": "~1.4.8"
+  },
+  "appPath": "static"
+}
