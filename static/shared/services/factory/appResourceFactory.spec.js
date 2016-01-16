@@ -4,8 +4,7 @@
 	var $resource, $q, $rootScope, $httpBackend, factory, appResourceFactory, mockDb;
 
 	//Load Services
-	beforeEach(module('shared.services', 'ngStorage', 'ngResource', 'ngMaterial',
-		'pascalprecht.translate', 'SignalR'));
+	beforeEach(module('shared.services', 'ngResource', 'ngMaterial'));
 
 	//Inject Dependencies
 	beforeEach(inject(function (_$resource_, _$q_, _$rootScope_, _$httpBackend_, _appResourceFactory_, _MockHttpFactory_) {

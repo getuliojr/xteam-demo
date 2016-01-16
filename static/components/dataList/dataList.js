@@ -84,7 +84,7 @@
         return {
             restrict: 'E',
             controller: 'DataListController',
-            templateUrl: 'app/components/core/dataList/dataList.html',
+            templateUrl: 'components/dataList/dataList.html',
             controllerAs: 'dataList',
             scope: {},
             bindToController: {

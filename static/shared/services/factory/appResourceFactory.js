@@ -8,9 +8,9 @@
     .factory('appResourceFactory', appResourceFactory);
 
     //Injeta dependencias
-    appResourceFactory.$inject = ['$resource', '$q', '$rootScope', '$httpBackend', 'constEventosDb',  'mediatorService', 'hubService'];
+    appResourceFactory.$inject = ['$resource', '$q', '$rootScope', '$httpBackend'];
 
-    function appResourceFactory($resource, $q, $rootScope, $httpBackend, constEventosDb,  mediatorService, hubService) {
+    function appResourceFactory($resource, $q, $rootScope, $httpBackend) {
 
         //Variáveis Privadas
         var _cache = {};

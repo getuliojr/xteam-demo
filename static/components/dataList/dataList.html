@@ -29,14 +29,14 @@
     <md-data-table-toolbar class="alternate" ng-if="dataList.selected.length > 0" layout-align="space-between center">
         <div flex>
             {{dataList.selected.length}}&nbsp;
-            <span ng-if="dataList.selected.length==1">{{ 'DATALIST.SELECTONE' | translate }}</span>
-            <span ng-if="dataList.selected.length > 1">{{ 'DATALIST.SELECTMANY' | translate }}</span>
+            <span ng-if="dataList.selected.length==1">{{ 'DATALIST.SELECTONE' }}</span>
+            <span ng-if="dataList.selected.length > 1">{{ 'DATALIST.SELECTMANY' }}</span>
         </div>
         <div >
             <md-button class="md-icon-buttom" ng-repeat="button in dataList.config.multipleItemMenu" ng-click="button.onClick(dataList.selected)"
                        aria-label="button.ariaLabel"
                        ng-attr-data-msg-confirm="button.msgConfirm">
-                <md-icon ng-if="button.icon">{{button.icon}}</md-icon><span ng-if="button.name"> {{ button.name | translate}}</span>
+                <md-icon ng-if="button.icon">{{button.icon}}</md-icon><span ng-if="button.name"> {{ button.name}}</span>
             </md-button>
         </div>
     </md-data-table-toolbar>
@@ -63,7 +63,7 @@
                                 <md-menu-item ng-repeat="button in dataList.config.itemMenu">
                                         <md-button ng-click="button.onClick(item)" aria-label="button.ariaLabel"
                                                    ng-attr-data-msg-confirm="button.msgConfirm">
-                                                <md-icon ng-if="button.icon">{{button.icon}}</md-icon> {{ button.name | translate}}
+                                                <md-icon ng-if="button.icon">{{button.icon}}</md-icon> {{ button.name }}
                                         </md-button>
                                     
                                 </md-menu-item>

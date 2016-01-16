@@ -7,7 +7,7 @@
     beforeEach(module('components.dataList', 'templates'));
 
     //Load Services
-    beforeEach(module('shared.services.service', 'ngStorage', 'md.data.table', 'ngMaterial', 'pascalprecht.translate'));
+    beforeEach(module('shared.services.service', 'md.data.table', 'ngMaterial'));
 
     //Inject Dependencies
     beforeEach(inject(function (_$rootScope_, _$controller_, _$compile_) {
@@ -28,7 +28,6 @@
         controllerAs = 'dataList';
         directiveName = 'abcDataList';
         isolateScope = directive.isolateScope();
-        
 
     }));
 
