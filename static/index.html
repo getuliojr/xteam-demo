@@ -41,8 +41,8 @@
         <div flex-initial style="width:1100px;">
             <p>Here you're sure to find a bargain on some of the finest ascii available to purchase. Be sure to peruse our selection of ascii faces in an exciting range of sizes and prices.</p>
             <p>But first, a word from our sponsors:</p> <script>document.write('<img class="ad" src="/ad/?r=' + Math.floor(Math.random()*1000) + '"/>');</script>
-            <section class="products" ui-view>
-                ... products go here ...
+            <section class="products">
+                <gr-product-list></gr-product-list>
             </section>
         </div>
     </md-content>
@@ -65,6 +65,7 @@
 <script src="app.js"></script>
 <script src="components/dataList/dataList.js"></script>
 <script src="components/index.js"></script>
+<script src="components/productList/productList.js"></script>
 <script src="shared/index.js"></script>
 <script src="shared/services/factory/appResourceFactory.js"></script>
 <script src="shared/services/factory/handleExceptionFactory.js"></script>
@@ -73,7 +74,7 @@
 <script src="shared/services/index.js"></script>
 <script src="shared/services/service/index.js"></script>
 <script src="shared/services/service/notificationService.js"></script>
-<script src="shared/services/service/setorService.js"></script>
+<script src="shared/services/service/productService.js"></script>
 <!-- endfileblock -->
 
 </body>

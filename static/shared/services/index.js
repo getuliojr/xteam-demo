@@ -5,6 +5,7 @@
     angular.module('shared.services', [
         'shared.services.factory',
         'shared.services.service'
+
     ]);
 
 })();

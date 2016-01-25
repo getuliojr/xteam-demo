@@ -21,7 +21,7 @@
         $compile = _$compile_;
 
         //Create Directive
-        var directiveElement = '<abc-data-list config="config" data="data", selected="selected" order-field="orderField"></abc-data-list>';
+        var directiveElement = '<gr-data-list config="config" data="data", selected="selected" order-field="orderField"></gr-data-list>';
         directive = getCompiledElement(directiveElement);
         
         //Other variables

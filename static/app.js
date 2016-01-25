@@ -35,4 +35,19 @@ angular.module('App', ['ngAnimate', 'ngResource', 'ngSanitize', 'components', 's
     $mdThemingProvider.theme('default').foregroundPalette[3] = "rgba(0,0,0,0.67)";
 })
 
+//Since the server is sending the response as mal-formed json, there is the need to modify it
+.config(function ($httpProvider) {
+    $httpProvider.defaults.transformResponse.push(function (data, headerGetter) {
+        var formedData = [];
+        //split files for each new line
+        var parseData = data.split("\n");
+        return parseData;
+        //var len = parseData.length;
+
+        //for(var a = 0; a < len; a++ ){
+        //    formedData.push(parseData[a]);
+        //}
+        //return formedData;
+    });
+})
 ;

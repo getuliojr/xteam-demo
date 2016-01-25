@@ -3,7 +3,8 @@
 
     angular
         .module('components', [
-        'components.dataList'
+        'components.dataList',
+        'components.productList'
 
     ]);
 

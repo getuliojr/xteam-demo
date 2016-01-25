@@ -14,7 +14,7 @@
      *
      * @example
        <pre>
-        <data-list config="config" data="data", selected="selected" order-field="orderField"><data-list />
+        <gr-data-list config="config" data="data", selected="selected" order-field="orderField"></gr-data-list>
        </pre>
      */
     angular
@@ -22,7 +22,7 @@
             
         ])
 
-        .directive('abcDataList', dataListDirective)
+        .directive('grDataList', dataListDirective)
         .controller('DataListController', DataListController);
 
     //Inject Dependencies
@@ -30,7 +30,7 @@
 
     /**
      * @ngdoc directive
-     * @name components.dataList.directive:dataList
+     * @name components.dataList.directive:grDataList
      * @restrict 'E'
      * @param {object} config It is responsible for the configuration of the dataList. The following properties are available:
      *      <ul>
