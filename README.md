@@ -31,8 +31,8 @@ Products API
 Ads
 ----
 
-- after every 20 products we need to insert an advertisement from one of our sponsors. Use the same markup as the advertisement in the header, but make sure the `?r` query param is randomly generated each time an ad is displayed.
-- Ads should be randomly selected, but a user must never see the same ad twice in a row.
+(done) - after every 20 products we need to insert an advertisement from one of our sponsors. Use the same markup as the advertisement in the header, but make sure the `?r` query param is randomly generated each time an ad is displayed.
+(done) - Ads should be randomly selected, but a user must never see the same ad twice in a row.
 
 FAQ
 ----

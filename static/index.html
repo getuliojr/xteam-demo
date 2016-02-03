@@ -28,7 +28,7 @@
 <!--[if lt IE 7]>
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
-<div flex layout="column" tabIndex="-1" role="main" class="md-whiteframe-z2 bgGrey" layout-fill>
+<div flex layout="column" tabIndex="-1" role="main" class="md-whiteframe-z2 bgGrey">
     <md-toolbar layout="row" class="md-whiteframe-z1">
         <div class="md-toolbar-tools">
             <h2>
@@ -40,7 +40,8 @@
     <md-content class="bgGrey" layout="row" layout-align="center center" >
         <div flex-initial style="width:1100px;">
             <p>Here you're sure to find a bargain on some of the finest ascii available to purchase. Be sure to peruse our selection of ascii faces in an exciting range of sizes and prices.</p>
-            <p>But first, a word from our sponsors:</p> <script>document.write('<img class="ad" src="/ad/?r=' + Math.floor(Math.random()*1000) + '"/>');</script>
+            <p>But first, a word from our sponsors:</p>
+            <gr-sponsor></gr-sponsor>
             <section class="products">
                 <gr-product-list></gr-product-list>
             </section>
@@ -63,20 +64,15 @@
 <!-- endbower -->
 <!-- fileblock:js clientJS -->
 <script src="app.js"></script>
-<script src="components/dataList/dataList.js"></script>
 <script src="components/index.js"></script>
 <script src="components/productList/productList.js"></script>
+<script src="components/sponsor/sponsor.js"></script>
 <script src="shared/filters/index.js"></script>
 <script src="shared/filters/timeAgoFilter.js"></script>
 <script src="shared/index.js"></script>
-<script src="shared/services/factory/appResourceFactory.js"></script>
-<script src="shared/services/factory/handleExceptionFactory.js"></script>
-<script src="shared/services/factory/index.js"></script>
-<script src="shared/services/factory/mockHttpFactory.js"></script>
 <script src="shared/services/index.js"></script>
-<script src="shared/services/service/index.js"></script>
-<script src="shared/services/service/notificationService.js"></script>
-<script src="shared/services/service/productService.js"></script>
+<script src="shared/services/productService.js"></script>
+<script src="shared/services/sponsorService.js"></script>
 <!-- endfileblock -->
 
 </body>

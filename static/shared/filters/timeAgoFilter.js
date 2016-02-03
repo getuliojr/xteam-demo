@@ -2,6 +2,17 @@
     'use strict';
 
     angular
+    /**
+     * @ngdoc overview
+     * @name shared.filters.timeAgoFilter
+     * @description
+     *
+     * # timeAgoFilter - Filter #
+     *
+     * This filter applied to a date returns how many days or hours has been passed or
+     * if longer than 7 days, it returns the full date
+     *
+     */
         .module('shared.filters.timeAgo', [
 
         ])
@@ -10,6 +21,16 @@
     //Inject Dependencies
     timeAgoFilter.$inject = ['$filter'];
 
+    /**
+     * @ngdoc function
+     * @name timeAgoFilter
+     * @methodOf shared.filters.function:timeAgoFilter
+     *
+     * @description
+     *
+     * This filter applied to a date returns how many days or hours has been passed or
+     * if longer than 7 days, it returns the full date
+     */
     function timeAgoFilter($filter) {
 
         return function (timeAgo) {

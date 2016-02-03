@@ -1,1 +1,46 @@
-<gr-data-list config="productList.config" data="productList.products", selected="productList.selected" order-field="productList.orderField"></gr-data-list>
+<!-- Content -->
+<md-table-container>
+    <table md-table ng-model="productList.selected">
+        <thead md-head md-order="productList.orderField" md-on-reorder="productList.onOrderChange">
+        <tr md-row>
+            <th md-column md-order-by="id">Id</th>
+            <th md-column>Ascii Face</th>
+            <th md-column md-order-by="size" md-numeric="true">Size (px)</th>
+            <th md-column md-order-by="price" md-numeric="true">Price (US$)</th>
+            <th md-column>Date added</th>
+        </tr>
+        </thead>
+        <tbody md-body ng-repeat="item in productList.products track by item.id">
+        <tr md-row>
+            <!-- render data -->
+            <td md-cell >{{item.id}}</td>
+            <td md-cell ><span style="font-size: {{item.size}}px;">{{item.face}}</span></td>
+            <td md-cell >{{item.size}}</td>
+            <td md-cell >{{item.price | currency:$:2}}</td>
+            <td md-cell >{{item.date | timeAgo}}</td>
+        </tr>
+
+        <!-- Insert an AD every 20 rows -->
+        <tr md-row ng-if="!(($index + 1) % 20)">
+            <td md-cell colspan="6" >
+                <div flex style="text-align: center;">
+                    <br/>
+                    <gr-sponsor></gr-sponsor><br/>
+                    A word from our sponsors
+                    <br/><br>
+                </div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</md-table-container>
+
+<!-- Loading records (message) -->
+<div ng-if="productList.loading ">
+    <h3>Loading records...</h3>
+</div>
+
+<!-- No more records on the server (message) -->
+<div ng-if="productList.existMoreData == false">
+    <h3>No more records available.</h3>
+</div>
