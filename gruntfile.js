@@ -128,7 +128,7 @@ module.exports = function (grunt) {
                                 ]
                             },
                             'clientCSS': {
-                                src: ['./static/content/styles/{,*/}*.css']
+                                src: ['./static/styles/{,*/}*.css']
                             }
                         }
                     }

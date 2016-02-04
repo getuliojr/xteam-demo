@@ -10,7 +10,7 @@
             <th md-column>Date added</th>
         </tr>
         </thead>
-        <tbody md-body ng-repeat="item in productList.products track by item.id">
+        <tbody md-body class="animate-item" ng-repeat="item in productList.products track by item.id">
         <tr md-row>
             <!-- render data -->
             <td md-cell >{{item.id}}</td>
