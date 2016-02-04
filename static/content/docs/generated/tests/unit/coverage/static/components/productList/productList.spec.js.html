@@ -1,0 +1,521 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for static\components\productList\productList.spec.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">all files</a> / <a href="index.html">static/components/productList/</a> productList.spec.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>57/57</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/0</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>10/10</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>57/57</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">describe('Component: productList', function () {
+&nbsp;
+    //Variable for itens that are going to be used in the tests
+    var $compile, directive, controllerAs, directiveName, isolateScope, $httpBackend ;
+&nbsp;
+    //Load Module to be Tested
+    beforeEach(module('components.productList', 'templates'));
+&nbsp;
+    //Load Services
+    beforeEach(module('shared', 'md.data.table', 'ngMaterial'));
+&nbsp;
+    //Inject Dependencies
+    beforeEach(inject(function (_$rootScope_, _$controller_, _$compile_, _$httpBackend_) {
+&nbsp;
+        //Create new scope
+        scope = _$rootScope_.$new();
+        //Configure to always start as an empty config
+        scope.config = {};
+&nbsp;
+        //Inject dependencies
+        $compile = _$compile_;
+        $httpBackend = _$httpBackend_;
+&nbsp;
+        //Mock htppGet
+        var mockedData =
+            '{"id":"0-kdm41fx3hpmygb9","size":37,"price":614,"face":"( .-. )","date":"Wed Jan 27 2016 15:31:20 GMT-0200 (HorÃ¡rio brasileiro de verÃ£o)"}' + '\n' +
+            '{"id":"1-710y19tps8j8aor","size":15,"price":463,"face":"( .o.)","date":"Wed Jan 27 2016 13:20:57 GMT-0200 (HorÃ¡rio brasileiro de verÃ£o)"}' + '\n' +
+            '{"id":"2-j2w6fsejco758kt9","size":32,"price":357,"face":"( `Â·Â´ )","date":"Sun Jan 31 2016 11:25:48 GMT-0200 (HorÃ¡rio brasileiro de verÃ£o)"}' + '\n' +
+            '{"id":"3-n303fp745yfzuxr","size":35,"price":156,"face":"( Â° Í Ê Â°)","date":"Tue Feb 02 2016 15:56:15 GMT-0200 (HorÃ¡rio brasileiro de verÃ£o)"}' + '\n' +
+            '{"id":"4-zbgtll2tksh8h0k9","size":38,"price":539,"face":"( Í¡Â° ÍÊ Í¡Â°)","date":"Thu Jan 21 2016 01:30:58 GMT-0200 (HorÃ¡rio brasileiro de verÃ£o)"}' + '\n' +
+            '{"id":"5-a4v5piq6tvrevcxr","size":38,"price":519,"face":"( â _ â )","date":"Thu Jan 21 2016 11:53:43 GMT-0200 (HorÃ¡rio brasileiro de verÃ£o)"}' + '\n' +
+            '{"id":"6-dy2jp389rygv6lxr","size":12,"price":588,"face":"( ï¸¶ï¸¿ï¸¶)","date":"Wed Jan 27 2016 05:52:58 GMT-0200 (HorÃ¡rio brasileiro de verÃ£o)"}' + '\n' +
+            '{"id":"7-j24bi0z3fas8aor","size":27,"price":269,"face":"( ï¾ã®ï¾)","date":"Fri Jan 29 2016 05:01:06 GMT-0200 (HorÃ¡rio brasileiro de verÃ£o)"}' + '\n' +
+            '{"id":"8-uqw9l81x8l7hkt9","size":19,"price":188,"face":"(\\/)(Â°,,,Â°)(\\/)","date":"Mon Feb 01 2016 19:36:30 GMT-0200 (HorÃ¡rio brasileiro de verÃ£o)"}' + '\n' +
+            '{"id":"9-0o32fo71007tx1or","size":18,"price":955,"face":"(Â¬_Â¬)","date":"Wed Jan 27 2016 04:27:06 GMT-0200 (HorÃ¡rio brasileiro de verÃ£o)"}' + '\n' +
+            '{"id":"10-eklie3pnxs5ah5mi","size":21,"price":541,"face":"(Â¬Âº-Â°)Â¬","date":"Sat Jan 23 2016 06:53:52 GMT-0200 (HorÃ¡rio brasileiro de verÃ£o)"}' + '\n' +
+            '{"id":"11-f3xxy3glij05dn29","size":30,"price":259,"face":"(Â¬â¿Â¬)","date":"Fri Jan 22 2016 19:23:44 GMT-0200 (HorÃ¡rio brasileiro de verÃ£o)"}' + '\n' +
+            '{"id":"12-ohfv8oxipxhwipb9","size":37,"price":258,"face":"(Â°ã­Â°)â","date":"Wed Feb 03 2016 04:27:16 GMT-0200 (HorÃ¡rio brasileiro de verÃ£o)"}' + '\n' +
+            '{"id":"13-eth5eke1wziftj4i","size":26,"price":841,"face":"(Â´ã»Ïã»)ã£","date":"Fri Jan 22 2016 14:20:49 GMT-0200 (HorÃ¡rio brasileiro de verÃ£o)"}' + '\n' +
+            '{"id":"14-kz1zawludua3jtt9","size":38,"price":463,"face":"(Ã³ Ã¬_Ã­)","date":"Sat Jan 23 2016 08:06:46 GMT-0200 (HorÃ¡rio brasileiro de verÃ£o)"}'+ '\n';
+&nbsp;
+        var mockedData2 =
+            '{"id":"15-kdm41fx3hpmygb9","size":37,"price":614,"face":"( .-. )","date":"Wed Jan 27 2016 15:31:20 GMT-0200 (HorÃ¡rio brasileiro de verÃ£o)"}' + '\n' +
+            '{"id":"16-710y19tps8j8aor","size":15,"price":463,"face":"( .o.)","date":"Wed Jan 27 2016 13:20:57 GMT-0200 (HorÃ¡rio brasileiro de verÃ£o)"}' + '\n' +
+            '{"id":"17-j2w6fsejco758kt9","size":32,"price":357,"face":"( `Â·Â´ )","date":"Sun Jan 31 2016 11:25:48 GMT-0200 (HorÃ¡rio brasileiro de verÃ£o)"}' + '\n' +
+            '{"id":"18-n303fp745yfzuxr","size":35,"price":156,"face":"( Â° Í Ê Â°)","date":"Tue Feb 02 2016 15:56:15 GMT-0200 (HorÃ¡rio brasileiro de verÃ£o)"}' + '\n' +
+            '{"id":"19-zbgtll2tksh8h0k9","size":38,"price":539,"face":"( Í¡Â° ÍÊ Í¡Â°)","date":"Thu Jan 21 2016 01:30:58 GMT-0200 (HorÃ¡rio brasileiro de verÃ£o)"}' + '\n' +
+            '{"id":"20-a4v5piq6tvrevcxr","size":38,"price":519,"face":"( â _ â )","date":"Thu Jan 21 2016 11:53:43 GMT-0200 (HorÃ¡rio brasileiro de verÃ£o)"}' + '\n' +
+            '{"id":"21-dy2jp389rygv6lxr","size":12,"price":588,"face":"( ï¸¶ï¸¿ï¸¶)","date":"Wed Jan 27 2016 05:52:58 GMT-0200 (HorÃ¡rio brasileiro de verÃ£o)"}' + '\n' +
+            '{"id":"22-j24bi0z3fas8aor","size":27,"price":269,"face":"( ï¾ã®ï¾)","date":"Fri Jan 29 2016 05:01:06 GMT-0200 (HorÃ¡rio brasileiro de verÃ£o)"}' + '\n' +
+            '{"id":"23-uqw9l81x8l7hkt9","size":19,"price":188,"face":"(\\/)(Â°,,,Â°)(\\/)","date":"Mon Feb 01 2016 19:36:30 GMT-0200 (HorÃ¡rio brasileiro de verÃ£o)"}' + '\n' +
+            '{"id":"24-0o32fo71007tx1or","size":18,"price":955,"face":"(Â¬_Â¬)","date":"Wed Jan 27 2016 04:27:06 GMT-0200 (HorÃ¡rio brasileiro de verÃ£o)"}' + '\n' +
+            '{"id":"25-0o32fo71007tx1or","size":18,"price":955,"face":"(Â¬_Â¬)","date":"Wed Jan 27 2016 04:27:06 GMT-0200 (HorÃ¡rio brasileiro de verÃ£o)"}' + '\n' +
+            '{"id":"26-0o32fo71007tx1or","size":18,"price":955,"face":"(Â¬_Â¬)","date":"Wed Jan 27 2016 04:27:06 GMT-0200 (HorÃ¡rio brasileiro de verÃ£o)"}' + '\n' +
+            '{"id":"27-0o32fo71007tx1or","size":18,"price":955,"face":"(Â¬_Â¬)","date":"Wed Jan 27 2016 04:27:06 GMT-0200 (HorÃ¡rio brasileiro de verÃ£o)"}' + '\n' +
+            '{"id":"28-0o32fo71007tx1or","size":18,"price":955,"face":"(Â¬_Â¬)","date":"Wed Jan 27 2016 04:27:06 GMT-0200 (HorÃ¡rio brasileiro de verÃ£o)"}' + '\n' +
+            '{"id":"29-0o32fo71007tx1or","size":18,"price":955,"face":"(Â¬_Â¬)","date":"Wed Jan 27 2016 04:27:06 GMT-0200 (HorÃ¡rio brasileiro de verÃ£o)"}' + '\n' ;
+&nbsp;
+        var mockedData3 =
+            '{"id":"30-kdm41fx3hpmygb9","size":37,"price":614,"face":"( .-. )","date":"Wed Jan 27 2016 15:31:20 GMT-0200 (HorÃ¡rio brasileiro de verÃ£o)"}' + '\n' +
+            '{"id":"31-710y19tps8j8aor","size":15,"price":463,"face":"( .o.)","date":"Wed Jan 27 2016 13:20:57 GMT-0200 (HorÃ¡rio brasileiro de verÃ£o)"}' + '\n' ;
+&nbsp;
+        $httpBackend.whenGET("/api/products?limit=15&amp;skip=0").respond(mockedData);
+        $httpBackend.whenGET("/api/products?limit=15&amp;skip=15").respond(mockedData2);
+        $httpBackend.whenGET("/api/products?limit=15&amp;skip=30").respond(mockedData3);
+&nbsp;
+        //Create Directive
+        var directiveElement = '&lt;gr-product-list page-size="pageSize"&gt;&lt;/gr-product-list&gt;';
+        directive = getCompiledElement(directiveElement);
+&nbsp;
+        //Other variables
+        controllerAs = 'productList';
+        directiveName = 'grProductList';
+        isolateScope = directive.isolateScope();
+&nbsp;
+&nbsp;
+    }));
+&nbsp;
+    afterEach(function () {
+        $httpBackend.verifyNoOutstandingExpectation();
+        $httpBackend.verifyNoOutstandingRequest();
+    });
+&nbsp;
+    it('expect template to be replaced', function () {
+        expect(directive.find('md-table-container').length).toBe(1);
+    });
+&nbsp;
+    it('expect controller to be defined', function () {
+        var controller = directive.controller(directiveName);
+        expect(controller).toBeDefined();
+    });
+&nbsp;
+    it('expect controllerAs name to be right', function () {
+        expect(isolateScope.hasOwnProperty(controllerAs)).toBeTruthy();
+    });
+&nbsp;
+    it('expect parameter: "page-size" to be set', function () {
+        var pageSize = 30;
+        scope.pageSize = pageSize;
+&nbsp;
+        var controller = isolateScope[controllerAs];
+&nbsp;
+        //isolateScope in the controller shouldn´t have a value yet
+        expect(controller.pageSize).toBe(15); //Default Value
+&nbsp;
+        //Run digest, setting new values in outer scope
+        scope.$digest();
+&nbsp;
+        //Values should have been set
+        expect(controller.pageSize).toBe(30);
+    });
+&nbsp;
+    it('expect function "showMore" to load next batch', function () {
+        var controller = isolateScope[controllerAs];
+&nbsp;
+        //should have 15 products showing
+        expect(controller.products.length).toBe(15);
+&nbsp;
+        //Run digest, setting new values in outer scope
+        controller.showMore();
+        $httpBackend.flush();
+        scope.$digest();
+&nbsp;
+        //should have 30 records showing
+        expect(controller.products.length).toBe(30);
+    });
+&nbsp;
+    it('expect existsMoreData to be set to false when all records have been loaded', function () {
+        var controller = isolateScope[controllerAs];
+&nbsp;
+        //it should still have more records
+        expect(controller.existsMoreData).toBe(true);
+&nbsp;
+        //Run digest, setting new values in outer scope
+        controller.showMore();
+        $httpBackend.flush();
+        scope.$digest();
+&nbsp;
+        //should not have more records
+        expect(controller.existsMoreData).toBe(false);
+    });
+&nbsp;
+    //Helper Function
+    function getCompiledElement(el){
+        var element = angular.element("&lt;body&gt;" + el + "&lt;/body&gt;");
+        var compiledElement = $compile(element)(scope);
+        $httpBackend.flush();
+        scope.$digest();
+        return compiledElement;
+    }
+&nbsp;
+});
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Feb 04 2016 16:35:41 GMT-0200 (Horário brasileiro de verão)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

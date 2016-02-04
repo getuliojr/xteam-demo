@@ -13,7 +13,7 @@
      *
      * Below is a list of the filters. Click on each one for more information:
      *
-     * - {@link shared.filters.timeAgoFilter timeAgoFilter}
+     * - {@link shared.filters.filter:timeAgoFilter timeAgoFilter}
      *
      */
     angular.module('shared.filters', [

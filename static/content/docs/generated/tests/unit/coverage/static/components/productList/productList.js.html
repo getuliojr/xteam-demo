@@ -1,0 +1,872 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for static\components\productList\productList.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">all files</a> / <a href="index.html">static/components/productList/</a> productList.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">77.78% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>56/72</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">45.83% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>11/24</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">83.33% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>10/12</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">77.78% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>56/72</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">﻿(function () {
+&nbsp;
+    'use strict';
+&nbsp;
+     /**
+     * @ngdoc overview
+     * @name components.productList
+     * @description
+     *
+     * # productList - Component #
+     *
+     * This module is responsible to get the list of products and list it to the user to buy.
+     * It will generate the table and control de flow of data and infinite scroll
+     *
+     * @example
+       &lt;pre&gt;
+        &lt;gr-product-list page-size="pageSize"&gt;&lt;gr-product-list /&gt;
+       &lt;/pre&gt;
+     */
+    angular
+        .module('components.productList', [
+            'shared.services.product'
+        ])
+&nbsp;
+        .directive('grProductList', productListDirective)
+        .controller('ProductListController', ProductListController);
+&nbsp;
+&nbsp;
+    /**
+     * @ngdoc directive
+     * @name components.productList.directive:grProductList
+     * @restrict 'E'
+     *
+     * @param {int=} page-size How many records to return each time it goes to the backend. Defaults to 15.
+     *
+     * @description
+     *
+     * This directive will render a table with data of the products. It is also responsable to control
+     * order by of itens and infinite scroll
+     *
+     */
+    function productListDirective() {
+        return {
+            restrict: 'E',
+            controller: 'ProductListController',
+            templateUrl: 'components/productList/productList.html',
+            controllerAs: 'productList',
+            scope: {},
+            bindToController:{
+                pageSize: '='
+            },
+&nbsp;
+            //Responsable for the infinite-scroll feature
+            link: function(scope, element, attrs, controller) {
+                //Set visible height of the page, to check scrolling
+                var heightDifferenceToGetMoreRecords = 100;
+&nbsp;
+                //To check only on scrolldown, optimizing things
+                var previousScroll = 0;
+&nbsp;
+<span class="fstat-no" title="function not covered" >                function checkVisibleHeight() {</span>
+                    //Get scroll position TOP for the window
+<span class="cstat-no" title="statement not covered" >                    var scrollTop = $(window).scrollTop();</span>
+&nbsp;
+                    //User is scrolling down
+<span class="cstat-no" title="statement not covered" >                    if (scrollTop  &gt; previousScroll) {</span>
+                        //Get scroll position BOTTOM for the window
+<span class="cstat-no" title="statement not covered" >                        var scrollBottom = scrollTop + $(window).height();</span>
+&nbsp;
+                        //Gets height position where element start
+<span class="cstat-no" title="statement not covered" >                        var elementTop = element.offset().top;</span>
+&nbsp;
+                        //Get height position where element ends
+<span class="cstat-no" title="statement not covered" >                        var elementBottom = elementTop + element.find('table').outerHeight();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                        var visibleTop = elementTop &lt; scrollTop ? scrollTop : elementTop;</span>
+&nbsp;
+                        //Get element height position where element is (at bottom)
+<span class="cstat-no" title="statement not covered" >                        var visibleBottom = elementBottom &gt; scrollBottom ? scrollBottom : elementBottom;</span>
+&nbsp;
+                        //If the visible part is near the heightDifference to get more records, call function
+                        //to load more
+<span class="cstat-no" title="statement not covered" >                        if (elementBottom - visibleBottom &lt;= heightDifferenceToGetMoreRecords) {</span>
+<span class="cstat-no" title="statement not covered" >                            scope.productList.showMore();</span>
+                        }
+                    }
+                    //set its value so we know when the user is scrolling down or up
+<span class="cstat-no" title="statement not covered" >                    previousScroll = scrollTop;</span>
+&nbsp;
+                }
+&nbsp;
+                //bind scroll function to Element
+                element.scroll(checkVisibleHeight);
+&nbsp;
+                //bind scroll function to Window
+                $(window).scroll(checkVisibleHeight);
+&nbsp;
+            }
+        }
+    }
+&nbsp;
+    //Inject Dependencies
+    ProductListController.$inject = ['$scope', 'productService'];
+&nbsp;
+    /**
+     * @ngdoc controller
+     * @name components.productList.controller:ProductListController
+     *
+     * @requires shared.services.service:product
+     *
+     * @description
+     *
+     * It has all the logic for the component productList
+     *
+     */
+    function ProductListController ($scope, productService) {
+&nbsp;
+        //Private vars
+        var _skip = 0;
+        var _nextBatch;
+        var _showMore = false;
+        var _sort = ""
+&nbsp;
+        //Public API of the component
+        var vm = this;
+        vm.showMore = showMore;
+        vm.onOrderChange = onOrderChange;
+        vm.loading = false;
+        vm.existsMoreData = true;
+&nbsp;
+        //init component
+        init();
+&nbsp;
+        /**
+         * @ngdoc function
+         * @name onOrderChange
+         * @methodOf components.productList.controller:ProductListController
+         * @param {string} orderBy The name of the field to sort the itens
+         *
+         * @description
+         *
+         * This is a public function that tells the component that the order of the list has been changed by the user
+         * It restart the list with the new values
+         */
+<span class="fstat-no" title="function not covered" >        function onOrderChange(orderBy){</span>
+            //On order change, reset gridsize
+<span class="cstat-no" title="statement not covered" >            _skip=0;</span>
+<span class="cstat-no" title="statement not covered" >            vm.products = [];</span>
+            //Do not try to get recors on desc order
+<span class="cstat-no" title="statement not covered" >            _sort = orderBy.replace('-','');</span>
+<span class="cstat-no" title="statement not covered" >            init();</span>
+        }
+&nbsp;
+        /**
+         * @ngdoc function
+         * @name showMore
+         * @methodOf components.productList.controller:ProductListController
+         *
+         * @description
+         *
+         * This a public function that tells the component to render a new batch of files.
+         */
+        function showMore(){
+            //Set variable to show more records to the user
+            _showMore = true;
+            //If data is already available, merge
+            <span class="missing-if-branch" title="else path not taken" >E</span>if (_nextBatch != undefined){
+                mergeRecords();
+            }
+            return true;
+        }
+&nbsp;
+        /**
+         * @ngdoc function
+         * @name mergeRecords
+         * @methodOf components.productList.controller:ProductListController
+         *
+         * @description
+         *
+         * This is a private function that is responsible to check if it is required to merge the new batch
+         * of products to the current list
+         *
+         * It also loads a new batch as soon as it merges the data successfully
+         */
+        function mergeRecords(){
+            //If the user has asked to show more records, check if they are available and merge data
+            if (_showMore == true){
+                //Merge new data in the current list
+                vm.products.push.apply( vm.products, _nextBatch);
+                //reset the variables
+                _showMore = false;
+                _nextBatch = undefined;
+&nbsp;
+                //Pre-Loads next batch if there is more
+                <span class="missing-if-branch" title="else path not taken" >E</span>if (vm.existsMoreData == true) {
+                    loadMore();
+                }
+            }
+        }
+&nbsp;
+        /**
+         * @ngdoc function
+         * @name loadMore
+         * @methodOf components.productList.controller:ProductListController
+         *
+         * @description
+         *
+         * This is a private function and it is responsable to load a new batch of records.
+         * It is not responsible to show in the screen, only load
+         */
+        function loadMore(){
+            //Only tries to load new records once, to avoid hitting the database more than necessary
+            <span class="missing-if-branch" title="else path not taken" >E</span>if (vm.loading == false){
+                //Tell the application that it is already loading next batch
+                vm.loading = true;
+&nbsp;
+                //Load next batch
+                var params = {limit: vm.pageSize, skip: _skip + vm.pageSize};
+                <span class="missing-if-branch" title="if path not taken" >I</span>if (!!_sort){
+<span class="cstat-no" title="statement not covered" >                    params.sort = _sort;</span>
+                }
+                productService.load(params).then(function(data){
+                    //set next values
+                    _skip += vm.pageSize;
+                    //Tell the application if there is more records available or not
+                    if (data.length &lt; vm.pageSize){
+                        //end of records
+                        vm.existsMoreData = false;
+                    }else{
+                        //there are more records in the server
+                        vm.existsMoreData = true;
+                    }
+                    //tell the application data is ready
+                    _nextBatch = data;
+                    vm.loading = false;
+                    //Check if merge is required
+                    mergeRecords();
+                })
+            }
+        }
+&nbsp;
+        /**
+         * @ngdoc function
+         * @name init
+         * @methodOf components.productList.controller:ProductListController
+         *
+         * @description
+         *
+         * This is a private function that is called when the controller is initialized and everytime the orderBy changes
+         */
+        function init(){
+            vm.pageSize = vm.pageSize || 15; //Set default value if not set
+&nbsp;
+            var params = {limit: vm.pageSize, skip: _skip};
+            <span class="missing-if-branch" title="if path not taken" >I</span>if (!!_sort){
+<span class="cstat-no" title="statement not covered" >                params.sort = _sort;</span>
+            }
+&nbsp;
+            vm.loading = true;
+            //First records
+            productService.load(params).then(function(data){
+                //add data to the list
+                vm.products = data;
+                vm.loading = false;
+                //Load next batch of records after finishing the first
+                loadMore();
+            });
+        }
+    }
+})();</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Feb 04 2016 16:35:41 GMT-0200 (Horário brasileiro de verão)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

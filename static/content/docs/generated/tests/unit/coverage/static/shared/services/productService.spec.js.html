@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for static\shared\services\productService.spec.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">all files</a> / <a href="index.html">static/shared/services/</a> productService.spec.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>23/23</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/0</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>6/6</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>23/23</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">describe('Shared.Services: productService', function () {
+&nbsp;
+    //Variable for itens that are going to be used in the tests
+    var productService, scope, $httpBackend;
+&nbsp;
+    //Load Services
+    beforeEach(module('shared.services.product'));
+&nbsp;
+&nbsp;
+    //Inject Dependencies
+    beforeEach(inject(function (_productService_, _$rootScope_, _$httpBackend_) {
+&nbsp;
+        //data is not json-formated. it Is just like the backend servers data
+        var mockedData =
+            '{"id":"0-kdm41fx3hpmygb9","size":37,"price":614,"face":"( .-. )","date":"Wed Jan 27 2016 15:31:20 GMT-0200 (HorÃ¡rio brasileiro de verÃ£o)"}' + '\n' +
+            '{"id":"1-710y19tps8j8aor","size":15,"price":463,"face":"( .o.)","date":"Wed Jan 27 2016 13:20:57 GMT-0200 (HorÃ¡rio brasileiro de verÃ£o)"}' + '\n' +
+            '{"id":"2-j2w6fsejco758kt9","size":32,"price":357,"face":"( `Â·Â´ )","date":"Sun Jan 31 2016 11:25:48 GMT-0200 (HorÃ¡rio brasileiro de verÃ£o)"}' + '\n' +
+            '{"id":"3-n303fp745yfzuxr","size":35,"price":156,"face":"( Â° Í Ê Â°)","date":"Tue Feb 02 2016 15:56:15 GMT-0200 (HorÃ¡rio brasileiro de verÃ£o)"}' + '\n' +
+            '{"id":"4-zbgtll2tksh8h0k9","size":38,"price":539,"face":"( Í¡Â° ÍÊ Í¡Â°)","date":"Thu Jan 21 2016 01:30:58 GMT-0200 (HorÃ¡rio brasileiro de verÃ£o)"}' + '\n' +
+            '{"id":"5-a4v5piq6tvrevcxr","size":38,"price":519,"face":"( â _ â )","date":"Thu Jan 21 2016 11:53:43 GMT-0200 (HorÃ¡rio brasileiro de verÃ£o)"}' + '\n' +
+            '{"id":"6-dy2jp389rygv6lxr","size":12,"price":588,"face":"( ï¸¶ï¸¿ï¸¶)","date":"Wed Jan 27 2016 05:52:58 GMT-0200 (HorÃ¡rio brasileiro de verÃ£o)"}' + '\n' +
+            '{"id":"7-j24bi0z3fas8aor","size":27,"price":269,"face":"( ï¾ã®ï¾)","date":"Fri Jan 29 2016 05:01:06 GMT-0200 (HorÃ¡rio brasileiro de verÃ£o)"}' + '\n' +
+            '{"id":"8-uqw9l81x8l7hkt9","size":19,"price":188,"face":"(\\/)(Â°,,,Â°)(\\/)","date":"Mon Feb 01 2016 19:36:30 GMT-0200 (HorÃ¡rio brasileiro de verÃ£o)"}' + '\n' +
+            '{"id":"9-0o32fo71007tx1or","size":18,"price":955,"face":"(Â¬_Â¬)","date":"Wed Jan 27 2016 04:27:06 GMT-0200 (HorÃ¡rio brasileiro de verÃ£o)"}' + '\n' +
+            '{"id":"10-eklie3pnxs5ah5mi","size":21,"price":541,"face":"(Â¬Âº-Â°)Â¬","date":"Sat Jan 23 2016 06:53:52 GMT-0200 (HorÃ¡rio brasileiro de verÃ£o)"}' + '\n' +
+            '{"id":"11-f3xxy3glij05dn29","size":30,"price":259,"face":"(Â¬â¿Â¬)","date":"Fri Jan 22 2016 19:23:44 GMT-0200 (HorÃ¡rio brasileiro de verÃ£o)"}' + '\n' +
+            '{"id":"12-ohfv8oxipxhwipb9","size":37,"price":258,"face":"(Â°ã­Â°)â","date":"Wed Feb 03 2016 04:27:16 GMT-0200 (HorÃ¡rio brasileiro de verÃ£o)"}' + '\n' +
+            '{"id":"13-eth5eke1wziftj4i","size":26,"price":841,"face":"(Â´ã»Ïã»)ã£","date":"Fri Jan 22 2016 14:20:49 GMT-0200 (HorÃ¡rio brasileiro de verÃ£o)"}' + '\n' +
+            '{"id":"14-kz1zawludua3jtt9","size":38,"price":463,"face":"(Ã³ Ã¬_Ã­)","date":"Sat Jan 23 2016 08:06:46 GMT-0200 (HorÃ¡rio brasileiro de verÃ£o)"}'+ '\n';
+&nbsp;
+        productService = _productService_;
+        scope = _$rootScope_.$new();
+        $httpBackend = _$httpBackend_;
+&nbsp;
+        $httpBackend.whenGET("/api/products").respond(mockedData);
+    }));
+&nbsp;
+    afterEach(function () {
+        $httpBackend.verifyNoOutstandingExpectation();
+        $httpBackend.verifyNoOutstandingRequest();
+    });
+&nbsp;
+    it('expect service to be defined', function () {
+        expect(productService).toBeDefined();
+        expect(productService.load).toBeDefined();
+&nbsp;
+    });
+&nbsp;
+    it('expect service to return formed json data', function () {
+        var data = [];
+        productService.load()
+            .then(function (result) {
+                data = result;
+            });
+&nbsp;
+        $httpBackend.flush();
+        scope.$digest();
+        //check data length
+        expect(data.length).toBe(15);
+&nbsp;
+        //check one data item
+        expect(data[2].price).toBe(357);
+    });
+&nbsp;
+&nbsp;
+&nbsp;
+});</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Feb 04 2016 16:35:41 GMT-0200 (Horário brasileiro de verão)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

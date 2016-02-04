@@ -53,7 +53,7 @@
      * @ngdoc controller
      * @name components.sponsor.controller:SponsorController
      *
-     * @requires shared.services.sponsor
+     * @requires shared.services.service:sponsor
      *
      * @description
      *

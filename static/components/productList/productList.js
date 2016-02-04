@@ -14,7 +14,7 @@
      *
      * @example
        <pre>
-        <gr-product-list><gr-product-list />
+        <gr-product-list page-size="pageSize"><gr-product-list />
        </pre>
      */
     angular
@@ -30,6 +30,8 @@
      * @ngdoc directive
      * @name components.productList.directive:grProductList
      * @restrict 'E'
+     *
+     * @param {int=} page-size How many records to return each time it goes to the backend. Defaults to 15.
      *
      * @description
      *
@@ -104,7 +106,7 @@
      * @ngdoc controller
      * @name components.productList.controller:ProductListController
      *
-     * @requires shared.services.product
+     * @requires shared.services.service:product
      *
      * @description
      *
@@ -133,6 +135,7 @@
          * @ngdoc function
          * @name onOrderChange
          * @methodOf components.productList.controller:ProductListController
+         * @param {string} orderBy The name of the field to sort the itens
          *
          * @description
          *

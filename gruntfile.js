@@ -27,16 +27,15 @@ module.exports = function (grunt) {
         ngdocs: {
             options: {
                 scripts: [
-                    // no jquery automatically loaded for tutorial!!!
                     '//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js',
                     '//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-touch.js',
                     '//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.js'
                 ],
-                dest: 'docs',
+                dest: 'static/content/docs/generated',
                 html5Mode: false,
                 startPage: '/api',
                 title: "Discount Ascii Warehouse Documentation",
-                titleLink: "/static/content/docs/index.html",
+                titleLink: "/content/docs/generated/index.html",
                 bestMatch: true
             },
             api: {
@@ -58,7 +57,7 @@ module.exports = function (grunt) {
             code: {
                 src: ['static/app.js', 'static/components/**/*.js', '!static/components/**/*.spec.js', 'static/shared/**/*.js', '!static/shared/**/*.spec.js'],
                 options: {
-                    output: 'static/content/docs/code'
+                    output: 'static/content/docs/generated/code'
                 }
             }
         },
@@ -93,8 +92,8 @@ module.exports = function (grunt) {
                 },
                 coverageReporter: {
                     reporters: [
-                        { type: 'text', dir: 'static/content/docs/tests/unit/coverage', subdir: '.' },
-                        { type: 'html', dir: 'static/content/docs/tests/unit/coverage', subdir: '.' }
+                        { type: 'text', dir: 'static/content/docs/generated/tests/unit/coverage', subdir: '.' },
+                        { type: 'html', dir: 'static/content/docs/generated/tests/unit/coverage', subdir: '.' }
                     ]
                 }
             }

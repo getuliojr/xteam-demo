@@ -11,7 +11,7 @@
      *
      * These are part of the infra-instructure, core, of the application.
      *
-     * - {@link shared.filtes filters}
+     * - {@link shared.filters filters}
      *
      * - {@link shared.services services}
      *

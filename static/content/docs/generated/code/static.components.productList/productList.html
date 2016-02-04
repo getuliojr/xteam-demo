@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>productList.js</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+  <link rel="stylesheet" media="all" href="../docco.css" />
+</head>
+<body>
+  <div id="container">
+    <div id="background"></div>
+    
+    <ul class="sections">
+        
+          <li id="title">
+              <div class="annotation">
+                  <h1>productList.js</h1>
+              </div>
+          </li>
+        
+        
+        
+        <li id="section-1">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-1">&#182;</a>
+              </div>
+              
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>﻿(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{<span class="hljs-meta">
+
+    'use strict'</span>;
+
+     <span class="hljs-comment">/**
+     * @ngdoc overview
+     * @name components.productList
+     * @description
+     *
+     * # productList - Component #
+     *
+     * This module is responsible to get the list of products and list it to the user to buy.
+     * It will generate the table and control de flow of data and infinite scroll
+     *
+     * @example
+       &lt;pre&gt;
+        &lt;gr-product-list page-size="pageSize"&gt;&lt;gr-product-list /&gt;
+       &lt;/pre&gt;
+     */</span>
+    angular
+        .module(<span class="hljs-string">'components.productList'</span>, [
+            <span class="hljs-string">'shared.services.product'</span>
+        ])
+
+        .directive(<span class="hljs-string">'grProductList'</span>, productListDirective)
+        .controller(<span class="hljs-string">'ProductListController'</span>, ProductListController);
+
+
+    <span class="hljs-comment">/**
+     * @ngdoc directive
+     * @name components.productList.directive:grProductList
+     * @restrict 'E'
+     *
+     * @param {int=} page-size How many records to return each time it goes to the backend. Defaults to 15.
+     *
+     * @description
+     *
+     * This directive will render a table with data of the products. It is also responsable to control
+     * order by of itens and infinite scroll
+     *
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">productListDirective</span>(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">return</span> {
+            restrict: <span class="hljs-string">'E'</span>,
+            controller: <span class="hljs-string">'ProductListController'</span>,
+            templateUrl: <span class="hljs-string">'components/productList/productList.html'</span>,
+            controllerAs: <span class="hljs-string">'productList'</span>,
+            scope: {},
+            bindToController:{
+                pageSize: <span class="hljs-string">'='</span>
+            },</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-2">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-2">&#182;</a>
+              </div>
+              <p>Responsable for the infinite-scroll feature</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>            link: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">scope, element, attrs, controller</span>) </span>{</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-3">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-3">&#182;</a>
+              </div>
+              <p>Set visible height of the page, to check scrolling</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>                <span class="hljs-keyword">var</span> heightDifferenceToGetMoreRecords = <span class="hljs-number">100</span>;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-4">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-4">&#182;</a>
+              </div>
+              <p>To check only on scrolldown, optimizing things</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>                <span class="hljs-keyword">var</span> previousScroll = <span class="hljs-number">0</span>;
+
+                <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">checkVisibleHeight</span>(<span class="hljs-params"></span>) </span>{</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-5">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-5">&#182;</a>
+              </div>
+              <p>Get scroll position TOP for the window</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>                    <span class="hljs-keyword">var</span> scrollTop = $(<span class="hljs-built_in">window</span>).scrollTop();</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-6">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-6">&#182;</a>
+              </div>
+              <p>User is scrolling down</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>                    <span class="hljs-keyword">if</span> (scrollTop  &gt; previousScroll) {</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-7">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-7">&#182;</a>
+              </div>
+              <p>Get scroll position BOTTOM for the window</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>                        <span class="hljs-keyword">var</span> scrollBottom = scrollTop + $(<span class="hljs-built_in">window</span>).height();</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-8">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-8">&#182;</a>
+              </div>
+              <p>Gets height position where element start</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>                        <span class="hljs-keyword">var</span> elementTop = element.offset().top;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-9">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-9">&#182;</a>
+              </div>
+              <p>Get height position where element ends</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>                        <span class="hljs-keyword">var</span> elementBottom = elementTop + element.find(<span class="hljs-string">'table'</span>).outerHeight();
+
+                        <span class="hljs-keyword">var</span> visibleTop = elementTop &lt; scrollTop ? scrollTop : elementTop;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-10">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-10">&#182;</a>
+              </div>
+              <p>Get element height position where element is (at bottom)</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>                        <span class="hljs-keyword">var</span> visibleBottom = elementBottom &gt; scrollBottom ? scrollBottom : elementBottom;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-11">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-11">&#182;</a>
+              </div>
+              <p>If the visible part is near the heightDifference to get more records, call function
+to load more</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>                        <span class="hljs-keyword">if</span> (elementBottom - visibleBottom &lt;= heightDifferenceToGetMoreRecords) {
+                            scope.productList.showMore();
+                        }
+                    }</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-12">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-12">&#182;</a>
+              </div>
+              <p>set its value so we know when the user is scrolling down or up</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>                    previousScroll = scrollTop;
+
+                }</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-13">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-13">&#182;</a>
+              </div>
+              <p>bind scroll function to Element</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>                element.scroll(checkVisibleHeight);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-14">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-14">&#182;</a>
+              </div>
+              <p>bind scroll function to Window</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>                $(<span class="hljs-built_in">window</span>).scroll(checkVisibleHeight);
+
+            }
+        }
+    }</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-15">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-15">&#182;</a>
+              </div>
+              <p>Inject Dependencies</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    ProductListController.$inject = [<span class="hljs-string">'$scope'</span>, <span class="hljs-string">'productService'</span>];
+
+    <span class="hljs-comment">/**
+     * @ngdoc controller
+     * @name components.productList.controller:ProductListController
+     *
+     * @requires shared.services.service:product
+     *
+     * @description
+     *
+     * It has all the logic for the component productList
+     *
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">ProductListController</span> (<span class="hljs-params">$scope, productService</span>) </span>{</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-16">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-16">&#182;</a>
+              </div>
+              <p>Private vars</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>        <span class="hljs-keyword">var</span> _skip = <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">var</span> _nextBatch;
+        <span class="hljs-keyword">var</span> _showMore = <span class="hljs-literal">false</span>;
+        <span class="hljs-keyword">var</span> _sort = <span class="hljs-string">""</span></pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-17">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-17">&#182;</a>
+              </div>
+              <p>Public API of the component</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>        <span class="hljs-keyword">var</span> vm = <span class="hljs-keyword">this</span>;
+        vm.showMore = showMore;
+        vm.onOrderChange = onOrderChange;
+        vm.loading = <span class="hljs-literal">false</span>;
+        vm.existsMoreData = <span class="hljs-literal">true</span>;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-18">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-18">&#182;</a>
+              </div>
+              <p>init component</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>        init();
+
+        <span class="hljs-comment">/**
+         * @ngdoc function
+         * @name onOrderChange
+         * @methodOf components.productList.controller:ProductListController
+         * @param {string} orderBy The name of the field to sort the itens
+         *
+         * @description
+         *
+         * This is a public function that tells the component that the order of the list has been changed by the user
+         * It restart the list with the new values
+         */</span>
+        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">onOrderChange</span>(<span class="hljs-params">orderBy</span>)</span>{</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-19">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-19">&#182;</a>
+              </div>
+              <p>On order change, reset gridsize</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>            _skip=<span class="hljs-number">0</span>;
+            vm.products = [];</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-20">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-20">&#182;</a>
+              </div>
+              <p>Do not try to get recors on desc order</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>            _sort = orderBy.replace(<span class="hljs-string">'-'</span>,<span class="hljs-string">''</span>);
+            init();
+        }
+
+        <span class="hljs-comment">/**
+         * @ngdoc function
+         * @name showMore
+         * @methodOf components.productList.controller:ProductListController
+         *
+         * @description
+         *
+         * This a public function that tells the component to render a new batch of files.
+         */</span>
+        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">showMore</span>(<span class="hljs-params"></span>)</span>{</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-21">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-21">&#182;</a>
+              </div>
+              <p>Set variable to show more records to the user</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>            _showMore = <span class="hljs-literal">true</span>;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-22">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-22">&#182;</a>
+              </div>
+              <p>If data is already available, merge</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>            <span class="hljs-keyword">if</span> (_nextBatch != <span class="hljs-literal">undefined</span>){
+                mergeRecords();
+            }
+            <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+        }
+
+        <span class="hljs-comment">/**
+         * @ngdoc function
+         * @name mergeRecords
+         * @methodOf components.productList.controller:ProductListController
+         *
+         * @description
+         *
+         * This is a private function that is responsible to check if it is required to merge the new batch
+         * of products to the current list
+         *
+         * It also loads a new batch as soon as it merges the data successfully
+         */</span>
+        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">mergeRecords</span>(<span class="hljs-params"></span>)</span>{</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-23">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-23">&#182;</a>
+              </div>
+              <p>If the user has asked to show more records, check if they are available and merge data</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>            <span class="hljs-keyword">if</span> (_showMore == <span class="hljs-literal">true</span>){</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-24">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-24">&#182;</a>
+              </div>
+              <p>Merge new data in the current list</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>                vm.products.push.apply( vm.products, _nextBatch);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-25">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-25">&#182;</a>
+              </div>
+              <p>reset the variables</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>                _showMore = <span class="hljs-literal">false</span>;
+                _nextBatch = <span class="hljs-literal">undefined</span>;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-26">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-26">&#182;</a>
+              </div>
+              <p>Pre-Loads next batch if there is more</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>                <span class="hljs-keyword">if</span> (vm.existsMoreData == <span class="hljs-literal">true</span>) {
+                    loadMore();
+                }
+            }
+        }
+
+        <span class="hljs-comment">/**
+         * @ngdoc function
+         * @name loadMore
+         * @methodOf components.productList.controller:ProductListController
+         *
+         * @description
+         *
+         * This is a private function and it is responsable to load a new batch of records.
+         * It is not responsible to show in the screen, only load
+         */</span>
+        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">loadMore</span>(<span class="hljs-params"></span>)</span>{</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-27">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-27">&#182;</a>
+              </div>
+              <p>Only tries to load new records once, to avoid hitting the database more than necessary</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>            <span class="hljs-keyword">if</span> (vm.loading == <span class="hljs-literal">false</span>){</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-28">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-28">&#182;</a>
+              </div>
+              <p>Tell the application that it is already loading next batch</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>                vm.loading = <span class="hljs-literal">true</span>;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-29">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-29">&#182;</a>
+              </div>
+              <p>Load next batch</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>                <span class="hljs-keyword">var</span> params = {limit: vm.pageSize, skip: _skip + vm.pageSize};
+                <span class="hljs-keyword">if</span> (!!_sort){
+                    params.sort = _sort;
+                }
+                productService.load(params).then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">data</span>)</span>{</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-30">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-30">&#182;</a>
+              </div>
+              <p>set next values</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>                    _skip += vm.pageSize;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-31">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-31">&#182;</a>
+              </div>
+              <p>Tell the application if there is more records available or not</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>                    <span class="hljs-keyword">if</span> (data.length &lt; vm.pageSize){</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-32">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-32">&#182;</a>
+              </div>
+              <p>end of records</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>                        vm.existsMoreData = <span class="hljs-literal">false</span>;
+                    }<span class="hljs-keyword">else</span>{</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-33">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-33">&#182;</a>
+              </div>
+              <p>there are more records in the server</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>                        vm.existsMoreData = <span class="hljs-literal">true</span>;
+                    }</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-34">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-34">&#182;</a>
+              </div>
+              <p>tell the application data is ready</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>                    _nextBatch = data;
+                    vm.loading = <span class="hljs-literal">false</span>;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-35">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-35">&#182;</a>
+              </div>
+              <p>Check if merge is required</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>                    mergeRecords();
+                })
+            }
+        }
+
+        <span class="hljs-comment">/**
+         * @ngdoc function
+         * @name init
+         * @methodOf components.productList.controller:ProductListController
+         *
+         * @description
+         *
+         * This is a private function that is called when the controller is initialized and everytime the orderBy changes
+         */</span>
+        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">init</span>(<span class="hljs-params"></span>)</span>{
+            vm.pageSize = vm.pageSize || <span class="hljs-number">15</span>; <span class="hljs-comment">//Set default value if not set</span>
+
+            <span class="hljs-keyword">var</span> params = {limit: vm.pageSize, skip: _skip};
+            <span class="hljs-keyword">if</span> (!!_sort){
+                params.sort = _sort;
+            }
+
+            vm.loading = <span class="hljs-literal">true</span>;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-36">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-36">&#182;</a>
+              </div>
+              <p>First records</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>            productService.load(params).then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">data</span>)</span>{</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-37">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-37">&#182;</a>
+              </div>
+              <p>add data to the list</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>                vm.products = data;
+                vm.loading = <span class="hljs-literal">false</span>;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-38">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-38">&#182;</a>
+              </div>
+              <p>Load next batch of records after finishing the first</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>                loadMore();
+            });
+        }
+    }
+})();</pre></div></div>
+            
+        </li>
+        
+    </ul>
+  </div>
+</body>
+</html>

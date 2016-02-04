@@ -1,0 +1,41 @@
+<h1><code ng:non-bindable="">ProductListController</code>
+<div><span class="hint">controller in module <code ng:non-bindable="">components.productList</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="components-productlist-controller-page components-productlist-controller-productlistcontroller-page"><p>It has all the logic for the component productList</p>
+</div></div>
+<h2 id="dependencies">Dependencies</h2>
+<ul class="dependencies"><li><code ng:non-bindable=""><a href="#/api/shared.services.service:product">product</a></code>
+</li>
+</ul>
+<div class="member method"><h2 id="methods">Methods</h2>
+<ul class="methods"><li><h3 id="methods_init">init()</h3>
+<div class="init"><div class="init-page"><p>This is a private function that is called when the controller is initialized and everytime the orderBy changes</p>
+</div></div>
+</li>
+<li><h3 id="methods_loadmore">loadMore()</h3>
+<div class="loadmore"><div class="loadmore-page"><p>This is a private function and it is responsable to load a new batch of records.
+It is not responsible to show in the screen, only load</p>
+</div></div>
+</li>
+<li><h3 id="methods_mergerecords">mergeRecords()</h3>
+<div class="mergerecords"><div class="mergerecords-page"><p>This is a private function that is responsible to check if it is required to merge the new batch
+of products to the current list</p>
+<p>It also loads a new batch as soon as it merges the data successfully</p>
+</div></div>
+</li>
+<li><h3 id="methods_onorderchange">onOrderChange(orderBy)</h3>
+<div class="onorderchange"><div class="onorderchange-page"><p>This is a public function that tells the component that the order of the list has been changed by the user
+It restart the list with the new values</p>
+</div><h5 id="methods_onorderchange_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>orderBy</td><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="onorderchange-page"><p>The name of the field to sort the itens</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_showmore">showMore()</h3>
+<div class="showmore"><div class="showmore-page"><p>This a public function that tells the component to render a new batch of files.</p>
+</div></div>
+</li>
+</ul>
+</div>
+</div>

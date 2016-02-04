@@ -4,13 +4,14 @@
     angular
     /**
      * @ngdoc overview
-     * @name shared.filters.timeAgoFilter
+     * @name shared.filters.filter:timeAgoFilter
      * @description
      *
      * # timeAgoFilter - Filter #
      *
-     * This filter applied to a date returns how many days or hours has been passed or
-     * if longer than 7 days, it returns the full date
+     * This filter applied to a date and returns how many days or hours has been passed when date is newer than a week.
+     *
+     * if longer than a week, it returns the full date formatted
      *
      */
         .module('shared.filters.timeAgo', [
@@ -24,12 +25,13 @@
     /**
      * @ngdoc function
      * @name timeAgoFilter
-     * @methodOf shared.filters.function:timeAgoFilter
+     * @methodOf shared.filters.filter:timeAgoFilter
      *
      * @description
      *
-     * This filter applied to a date returns how many days or hours has been passed or
-     * if longer than 7 days, it returns the full date
+     * This filter applied to a date and returns how many days or hours has been passed when date is newer than a week.
+     *
+     * if longer than a week, it returns the full date formatted
      */
     function timeAgoFilter($filter) {
 

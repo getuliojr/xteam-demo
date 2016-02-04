@@ -69,7 +69,7 @@ module.exports = function (config) {
 
     //Configuration to generate an html report for the unit tests
     htmlReporter: {
-        outputDir: '/static/content/docs/tests/', // where to put the reports
+        outputDir: 'static/content/docs/generated/tests/', // where to put the reports
         templatePath: null, // set if you moved jasmine_template.html
         focusOnFailures: true, // reports show failures on start
         namedFiles: false, // name files instead of creating sub-directories
