@@ -127,6 +127,7 @@
         vm.onOrderChange = onOrderChange;
         vm.loading = false;
         vm.existsMoreData = true;
+        vm.pageSize = vm.pageSize || 15; //Set default value if not set
 
         //init component
         init();
@@ -249,8 +250,6 @@
          * This is a private function that is called when the controller is initialized and everytime the orderBy changes
          */
         function init(){
-            vm.pageSize = vm.pageSize || 15; //Set default value if not set
-
             var params = {limit: vm.pageSize, skip: _skip};
             if (!!_sort){
                 params.sort = _sort;

@@ -11,12 +11,8 @@ module.exports = function (config) {
       // Third party libs, should be added automatically by grunt: devDependencies
       // bower:js
       'static/libs/jquery/dist/jquery.js',
-      'static/libs/es5-shim/es5-shim.js',
       'static/libs/angular/angular.js',
       'static/libs/angular-animate/angular-animate.js',
-      'static/libs/angular-resource/angular-resource.js',
-      'static/libs/angular-sanitize/angular-sanitize.js',
-      'static/libs/angular-ui-router/release/angular-ui-router.js',
       'static/libs/angular-aria/angular-aria.js',
       'static/libs/angular-messages/angular-messages.js',
       'static/libs/angular-material/angular-material.js',
