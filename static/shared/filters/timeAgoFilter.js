@@ -46,18 +46,23 @@
             //Difference in Days (desconsider time)
             var diffinDays = (utcTimeNow-utcTimeAgo)/1000/60/60/24;
 
-            if (diffinDays > 7){
-                //Return formated date
+            if (diffinDays >= 7){
+                //Return formated date (1 week older)
                 return $filter('date')(timeAgo, 'MMM-dd-yyyy');
-            }else if (diffinDays >= 2){
+            }else if (diffinDays > 1){
                 //Return a message in days ago
                 return diffinDays + " days ago";
-            }else if  (diffinDays >= 1){
-                //Return a message in one day ago
-                return diffinDays + " day ago";
-            }else{
+            }else if  (diffinDays <= 1){
                 //Return a message in hours ago
-                return Math.ceil((timeNow - timeAgo)/1000/60/60) + " hours ago";
+                var hours = Math.floor((timeNow - timeAgo)/1000/60/60);
+                if (hours <= 1){
+                    return "1 hour ago";
+                }else if (hours <24) {
+                    return hours + " hours ago";
+                }else {
+                    //Return a message in one day ago
+                    return "1 day ago";
+                }
             }
         };
 
